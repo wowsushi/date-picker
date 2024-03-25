@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
   },
   plugins: ['prettier'],
-  extends: ['airbnb', 'react-app', 'react-app/jest', 'prettier'],
+  extends: ['react-app', 'react-app/jest', 'prettier'],
   overrides: [
     {
       env: {
@@ -36,5 +36,6 @@ module.exports = {
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/no-array-index-key': 'off',
   },
 }

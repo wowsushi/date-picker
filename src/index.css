@@ -1,4 +1,10 @@
---root
+:root {
+  --date-picker-bg-default: white;
+  --date-picker-bg-hover: #e6e6e6;
+  --date-picker-bg-today: #ffff76;
+  --date-picker-bg-active: #006edc;
+  --date-picker-bg-non_current_month: #757575;
+}
 
 body {
   margin: 0;
@@ -7,4 +13,70 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-picker {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    height: 44px;
+    margin-bottom: 16px;
+  }
+
+  .month-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--date-picker-bg-default);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--date-picker-bg-hover);
+    }
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+  }
+
+  .day-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 36px;
+    background-color: var(--date-picker-bg-default);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--date-picker-bg-hover);
+    }
+
+    &.today {
+      background-color: var(--date-picker-bg-today);
+    }
+
+    &.active {
+      background-color: var(--date-picker-bg-active);
+      color: var(--date-picker-bg-default);
+    }
+
+    &.non_current_month {
+      color: var(--date-picker-bg-non_current_month);
+    }
+  }
 }
